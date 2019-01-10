@@ -1,0 +1,234 @@
+@*The fully qualified class path to the model to be used*@
+@*@model Alex.Simple2.Models.Anime*@  @*For one object only*@
+@*For a whole List of students*@
+@model IEnumerable<Alex.Simple2.Models.Anime>
+@*@model Alex.Simple2.ViewModels.Anime_Movie*@
+
+@{
+
+    ViewBag.Title = "Index";
+}
+
+<script type='text/javascript'>
+
+
+    //function deleteAnime(id) {
+    //    var oneToDelete = document.getElementById(id);
+    //    var parentOfOne = oneToDelete.parentNode;
+    //    parentOfOne.removeChild(oneToDelete);
+    //    var xmlHttp;
+    //    if (window.XMLHttpRequest) {
+    //        xmlHttp = new XMLHttpRequest();
+    //    }
+    //    else {
+    //        xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+    //    }
+    //    xmlHttp.onreadystatechange = function () {
+    //        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+    //            alert(xmlHttp.responseText);
+    //        }
+    //    }
+    //    // alert('delete?id=' + id, true);
+    //    xmlHttp.open('POST', 'delete?id=' + id, true); // Set The Method to call /Action  Id of The Anime to be deleted here
+    //    xmlHttp.send();
+    //}
+
+    //function edit(id) {
+    //    var editTR = document.getElementById(id);
+    //    alert('This is: ' + editTR);
+    //    var editTitle = editTR.childNodes[1];
+    //    var editGenre = editTR.childNodes[2];
+    //    var editComment = editTR.childNodes[3];
+
+    //    var titleInput = document.createElement('INPUT'); //titleInput
+    //    titleInput.setAttribute('value', editTitle.innerHTML);
+    //    editTitle.replaceChild(titleInput, editTitle.childNodes[0]);
+
+    //    var genreInput = document.createElement('INPUT');
+    //    genreInput.setAttribute('value', editGenre.innerHTML);
+    //    editGenre.replaceChild(genreInput, editGenre.childNodes[0]);
+
+    //    var commentInput = document.createElement('INPUT');
+    //    commentInput.setAttribute('value', editComment.innerHTML);
+    //    editComment.replaceChild(commentInput, editComment.childNodes[0]);
+
+    //    var cool = false;
+
+    //    var save = editTR.childNodes[4].childNodes[1];
+    //    save.setAttribute('value', 'Save');
+    //    save.onclick = function () {
+    //        var xmlHttp;
+    //        if (window.XMLHttpRequest) {
+    //            xmlHttp = new XMLHttpRequest();
+    //        }
+    //        else {
+    //            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+    //        }
+    //        xmlHttp.onreadystatechange = function () {
+    //            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+    //                alert(xmlHttp.responseText);
+    //            }
+    //        }
+    //        var temp = 'update?id=' + id + '&title=' + titleInput.value + '&genre=' + genreInput.value + '&comment=' + commentInput.value;
+    //        alert(temp);
+    //        xmlHttp.open('POST', temp, true);
+    //        xmlHttp.send();
+    //        if (!temp == null)
+    //            cool = true;
+
+    //        document.location.reload(true);
+    //        //var edit = editTR.childNodes[4].childNodes[1];
+    //        //save.setAttribute('value', 'Edit');
+    //    }
+    //    if (cool) {
+    //        document.location.reload();
+    //    }
+
+    //}
+    //function add() {
+    //    var x = document.getElementById('mytable');
+    //    var TR = document.createElement('TR');
+    //    var td1 = document.createElement('TD');
+    //    var td2 = document.createElement('TD');
+    //    var td3 = document.createElement('TD');
+    //    var td4 = document.createElement('TD');
+    //    var td5 = document.createElement('TD');
+    //    var id = document.createElement('INPUT');
+    //    var title = document.createElement('INPUT');
+    //    var genre = document.createElement('INPUT');
+    //    var comment = document.createElement('INPUT');
+    //    var save = document.createElement('INPUT');
+    //    save.setAttribute('type', 'BUTTON');
+    //    save.setAttribute('value', 'Save');
+    //    var cancel = document.createElement('INPUT');
+    //    cancel.setAttribute('type', 'BUTTON');
+    //    cancel.setAttribute('value', 'Cancel');
+    //    TR.appendChild(td1);
+    //    TR.appendChild(td2);
+    //    TR.appendChild(td3);
+    //    TR.appendChild(td4);
+    //    TR.appendChild(td5);
+    //    td1.appendChild(id);
+    //    td2.appendChild(title);
+    //    td3.appendChild(genre);
+    //    td4.appendChild(comment);
+    //    td5.appendChild(save);
+    //    td5.appendChild(cancel);
+    //    mytable.appendChild(TR);
+    //    save.onclick = function () {
+    //        var xmlHttp;
+    //        if (window.XMLHttpRequest) {
+    //            xmlHttp = new XMLHttpRequest();
+    //        }
+    //        else {
+    //            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+    //        }
+    //        xmlHttp.onreadystatechange = function () {
+    //            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+    //                alert(xmlHttp.responseText);
+    //            }
+    //        }
+    //        var cool = false;
+    //        var temp = 'create?id=' + id.value + '&title=' + title.value + '&genre=' + genre.value + '&comment=' + comment.value;
+    //        if (!(temp == null)) {
+    //            xmlHttp.open('GET', temp, true);
+    //            xmlHttp.send();
+    //            cool = true;
+    //        }
+
+    //        if (cool) {
+    //            for (var i = 0; i < 139000; i++) {
+    //            }
+    //            window.location.reload(true);
+    //        }
+
+
+    //    }
+    //    cancel.onclick = function () {
+    //        location.reload();
+    //    }
+
+
+
+    //}
+</script>
+
+<h2> Super Anime Site </h2>
+
+<strong><em>Watch out for the new movie as well: </em></strong>  <br /><br />
+
+<table border="1" cellpadding="1" cellspacing="2" id="mytable">
+
+    <tr>    
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Comment</th>
+        <th>
+            <button class="anime-add btn btn-success">Add</button>
+        </th>
+    </tr>
+
+    @foreach (var anime in Model)
+    {
+        <tr class="anime" data-id="@anime.AnimeId">
+            <td class="anime-title" data-id="@anime.Title">@anime.Title</td>
+            <td class="anime-genre" data-id="gen">@anime.Genre</td>
+            <td class="anime-comment" data-id="com">@anime.Comment</td>
+            <td>
+                <button class="anime-edit btn btn-info">Edit</button>
+                <button class="anime-delete btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    }
+</table>
+
+@section scripts{
+    <script>
+        $('body').on('click', 'button.anime-edit', function ()
+        {
+            var row = $(this).closest('tr.anime');
+            var anime_id = row.attr('data-id');
+            
+            row.children(':not(:last-child)').each(function (index, element)
+            {
+                var $element = $(element);
+                $element.html('<input value="' + $element.text() + '">');
+            });
+
+            row.children().last().html('<button class="anime-save btn btn-primary">Save</button><button class="anime-cancel btn btn-warning">Cancel</button>');
+        });
+
+        $('body').on('click', 'button.anime-delete', function () {
+            var row = $(this).closest('tr.anime');
+            var anime_id = row.attr('data-id');
+            $.get('delete?id=' + anime_id, function (response) {
+                if (response) {
+                    row.remove();
+                }
+            });
+        });
+
+        $('button.anime-add').click(function () {
+            console.log('add');
+        });
+
+        $('body').on('click', 'button.anime-save', function (repsonse) {
+            var row = $(this).closest('tr.anime');
+            var anime_id = row.attr('data-id');
+            var anime_tit = row.children().attr('data-id');
+            var anime_gen = row.children().attr('data-id');
+            console.log(anime_tit+' '+anime_gen);
+            //$.get('delete?id=' + anime_id, function (response) {
+            //    if (response) {
+            //        row.remove();
+            //    }
+            //});
+
+        });
+        
+    </script>
+}
+
+
+
+
